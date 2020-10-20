@@ -10,11 +10,11 @@ public class Test {
 		// TODO Auto-generated method stub
 		IUser userdao = new UserImpl();
 		User u = new User();
-		u.setNom_user("CISSE");
-		u.setPrenom_user("Aissatou");
+		u.setNom("CISSE");
+		u.setPrenom("Aissatou");
 		u.setEmail("aissatoucisse351@gmail.com");
 		u.setPassword("passer345");
-		u.setEtat(1);
+		
 		System.out.println(userdao.add(u));
 
 	}

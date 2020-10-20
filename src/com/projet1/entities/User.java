@@ -9,85 +9,63 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
 @Entity
-public class User implements Serializable {
-	@Id
-	@GeneratedValue(strategy=GenerationType.IDENTITY)
-	private int id_user;
-	@Column(length=50)
-	private  String nom_user;
-	@Column(length=100)
-	private  String prenom_user;
-	@Column(length=100)
-	private  String email;
-	@Column(length=100)
-	private  String password;
-	private int etat;
-	
-	
-	public User() {
-		super();
-		// TODO Auto-generated constructor stub
-	}
+public class User {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private int id;
+    private String nom;
+    private String prenom;
+    private String email;
+    private String password;
+   
+    public User() {
+    }
 
+    public User(int id, String nom, String prenom, String email, String password) {
+        this.id = id;
+        this.nom = nom;
+        this.prenom = prenom;
+        this.email = email;
+        this.password = password;
+    }
 
-	public int getId_user() {
-		return id_user;
-	}
+    public int getId() {
+        return id;
+    }
 
+    public void setId(int id) {
+        this.id = id;
+    }
 
-	public void setId_user(int id_user) {
-		this.id_user = id_user;
-	}
+    public String getNom() {
+        return nom;
+    }
 
+    public void setNom(String nom) {
+        this.nom = nom;
+    }
 
-	public String getNom_user() {
-		return nom_user;
-	}
+    public String getPrenom() {
+        return prenom;
+    }
 
+    public void setPrenom(String prenom) {
+        this.prenom = prenom;
+    }
 
-	public void setNom_user(String nom_user) {
-		this.nom_user = nom_user;
-	}
+    public String getEmail() {
+        return email;
+    }
 
+    public void setEmail(String email) {
+        this.email = email;
+    }
 
-	public String getPrenom_user() {
-		return prenom_user;
-	}
+    public String getPassword() {
+        return password;
+    }
 
-
-	public void setPrenom_user(String prenom_user) {
-		this.prenom_user = prenom_user;
-	}
-
-
-	public String getEmail() {
-		return email;
-	}
-
-
-	public void setEmail(String email) {
-		this.email = email;
-	}
-
-
-	public String getPassword() {
-		return password;
-	}
-
-
-	public void setPassword(String password) {
-		this.password = password;
-	}
-
-
-	public int getEtat() {
-		return etat;
-	}
-
-
-	public void setEtat(int etat) {
-		this.etat = etat;
-	}
-	
-	
+    public void setPassword(String password) {
+        this.password = password;
+    }
 }

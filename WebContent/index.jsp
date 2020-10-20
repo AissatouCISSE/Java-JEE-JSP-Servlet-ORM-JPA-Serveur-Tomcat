@@ -1,3 +1,7 @@
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
+    
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -405,7 +409,7 @@
         // (string | mandatory) the heading of the notification
         title: 'Bienvenue a SENFORAGE!',
         // (string | mandatory) the text inside the notification
-        text: 'le projet SENFORAGE  a Ã©tÃ© lancÃ© dans le but de creuser un forage chaque Ã©tÃ© dans un quartier de la ville de Kaffrine(Senegal) pour lutter contre la pÃ©nurie d eau potable et apporter notre contribution au dÃ©veloppement durable',
+        text: 'le projet SENFORAGE  a été lancé dans le but de creuser un forage chaque été dans un quartier de la ville de Kaffrine(Senegal) pour lutter contre la pénurie d eau potable et apporter notre contribution au développement durable',
         // (string | optional) the image to display on the left
         image: 'img/aicha.jpg',
         // (bool | optional) if you want it to fade out on its own or just sit there
