@@ -2,6 +2,7 @@ package com.projet1.entities;
 
 import java.io.Serializable;
 
+
 public class Client implements Serializable {
 	private Long id_client;
 	private String nom_client;
