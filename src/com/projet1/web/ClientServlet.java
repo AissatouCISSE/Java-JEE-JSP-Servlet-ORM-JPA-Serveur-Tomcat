@@ -27,7 +27,7 @@ public class ClientServlet extends HttpServlet {
 	public void doGet(HttpServletRequest request , HttpServletResponse response) throws ServletException, IOException{
 		String path = request.getServletPath();
 		if(path.equals("/index.aissatou")){
-			request.getRequestDispatcher("clients.jsp").forward(request,response);
+			request.getRequestDispatcher("index.jsp").forward(request,response);
 		}else if(path.equals("/chercher.aissatou")) {
 			String motCle = request.getParameter("motCle");
 			/*
@@ -43,7 +43,7 @@ public class ClientServlet extends HttpServlet {
 			request.setAttribute("clients",  clientDb.clientParMC(motCle));
 			
 			
-			request.getRequestDispatcher("clients.jsp").forward(request, response);
+			request.getRequestDispatcher("index.jsp").forward(request, response);
 		}
 		
 	}
