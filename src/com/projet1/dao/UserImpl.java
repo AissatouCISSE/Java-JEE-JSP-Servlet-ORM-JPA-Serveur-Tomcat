@@ -43,6 +43,8 @@ public class UserImpl implements IUser {
 					.setParameter("e",email)
 					.setParameter("p",password)
 					.getSingleResult();
+			System.out.println(email);
+			System.out.println(password);
 			return user;
 
 		}catch (Exception e)

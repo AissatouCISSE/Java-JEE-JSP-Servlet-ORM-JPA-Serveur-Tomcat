@@ -16,8 +16,14 @@
 <servlet>
 	<servlet-name>Connexion</servlet-name>
 	<servlet-class>com.projet1.web.Connexion</servlet-class>
+	
 </servlet>
 
+<servlet>
+	<servlet-name>Village</servlet-name>
+	<servlet-class>com.projet1.entities.Village</servlet-class>
+	
+</servlet>
 
 
 <servlet-mapping>

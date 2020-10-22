@@ -1,12 +1,15 @@
 package com.projet1.entities;
 
 import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.List;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 
 @Entity
 public class User {
@@ -17,7 +20,13 @@ public class User {
     private String prenom;
     private String email;
     private String password;
-   
+
+	@OneToMany(mappedBy = "user")
+	private List<Client> clients = new ArrayList<Client>();
+	@OneToMany(mappedBy = "user")
+	private List<Village> villages = new ArrayList<Village>();
+	
+	
     public User() {
     }
 
@@ -68,4 +77,28 @@ public class User {
     public void setPassword(String password) {
         this.password = password;
     }
+
+	public List<Client> getClients() {
+		return clients;
+	}
+
+	public void setClients(List<Client> clients) {
+		this.clients = clients;
+	}
+
+	public List<Village> getVillages() {
+		return villages;
+	}
+
+	public void setVillages(List<Village> villages) {
+		this.villages = villages;
+	}
+
+	@Override
+	public String toString() {
+		return "User [id=" + id + ", nom=" + nom + ", prenom=" + prenom + ", email=" + email + ", password=" + password
+				+ ", clients=" + clients + ", villages=" + villages + "]";
+	}
+    
+    
 }
