@@ -21,7 +21,7 @@ public class Village implements Serializable {
 	private String nom_village;
 
 	@ManyToOne
-	private User user;
+	private User user = new User();
 
 	@OneToMany(mappedBy = "village")
 	private List<Client> clients = new ArrayList<Client>();

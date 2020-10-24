@@ -4,8 +4,15 @@ import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
 
+import com.projet1.entities.Client;
 import com.projet1.entities.Village;
+import com.projet1.metier.SingletonConnection;
 
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.util.ArrayList;
 import java.util.List;
 
 public class VillageImpl implements IVillage {
@@ -30,7 +37,28 @@ public class VillageImpl implements IVillage {
 
 	@Override
 	public List<Village> villages() {
-		return em.createQuery("SELECT v FROM Village v").getResultList();
+		//return em.createQuery("SELECT v FROM village v ").getResultList();
+		
+		// TODO Auto-generated method stub
+		List<Village> villages = new ArrayList<Village>();
+		Connection conn = SingletonConnection.getConnection();
+		try {
+			PreparedStatement ps = conn.prepareStatement(" SELECT * FROM village");
+			
+			ResultSet rs = ps.executeQuery();
+			while(rs.next()) {
+				Village v = new Village();
+				v.setId(rs.getInt("id"));
+				v.setNom_village(rs.getString("nom_village"));
+				
+				villages.add(v);
+			}
+			
+			
+		}catch (SQLException e) {
+			e.printStackTrace();
+		}
+		return villages;
 	}
 
 	@Override
@@ -67,5 +95,6 @@ public class VillageImpl implements IVillage {
 	public Village get(int id) {
 		// TODO Auto-generated method stub
 		return em.find(Village.class,id);
+		
 	}
 }

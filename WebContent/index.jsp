@@ -11,7 +11,7 @@
   <meta name="description" content="">
   <meta name="author" content="Dashboard">
   <meta name="keyword" content="Dashboard, Bootstrap, Admin, Template, Theme, Responsive, Fluid, Retina">
-  <title>Dashio - Bootstrap Admin Template</title>
+  <title>SENFORAGE</title>
 
   <!-- Favicons -->
   <link href="img/favicon.png" rel="icon">
@@ -73,13 +73,14 @@
           <p class="centered"><a href="profile.html"><img src="img/aicha.jpg" class="img-circle" width="80"></a></p>
           <h5 class="centered">Aissatou CISSE</h5>
           <li class="mt">
-            <a class="active" href="index.html">
+            <a class="active" href="index.jsp">
               <i class="fa fa-user"></i>
               <span>Gestion des clients</span>
               </a>
           </li>
           <li class="sub-menu">
             <a href="javascript:;">
+            <a class="active" href="village.jsp">
               <i class="fa fa-home"></i>
               <span>Gestion des villages</span>
               </a>
@@ -92,6 +93,7 @@
           </li>
           <li class="sub-menu">
             <a href="javascript:;">
+            <a class="active" href="listuser.jsp">
               <i class="fa fa-user"></i>
               <span>Gestion des utilisateurs</span>
               </a>
@@ -200,10 +202,12 @@
             
             
             
-            <div class="container">
-	<div class="card">
+   
+	
 	<div class="card-header">Rechercher un Client</div>
 	<div class="card-bidy">
+	<div class="col-sm-9 col-md-6">
+
 		<form action="chercher.aissatou" method="get">
 		
 		<input type="text" name="motCle" value="${model.motCle}"/>
@@ -219,7 +223,7 @@
 		</tr>
 		<c:forEach items="${clients}" var="c">
 		<tr>
-			<td>${c.id_client}</td>
+			<td>${c.id}</td>
 			<td>${c.nom_client}</td>
 			<td>${c.adresse_client}</td>
 			<td>${c.telephone_client}</td>
@@ -228,10 +232,26 @@
 		
 		
 		</table>
+		.</div>
+		
+	 <div class="col-sm-9 col-md-6">formulaire</div>
 	
 	</div>
 	</div>
-</div>
+
+
+
+
+
+
+</section>
+</section>
+
+
+
+
+
+
             
             <!--custom chart end-->
             

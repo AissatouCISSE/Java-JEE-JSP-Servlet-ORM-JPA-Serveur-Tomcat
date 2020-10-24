@@ -226,17 +226,7 @@
 		</table>
 
 </div>
-	 <div class="col-sm-9 col-md-6">
-    <form action="village" method="post">
-  <div class="form-group">
- 
-    <label>Nom du village</label> <input class="form-control" type="text" name="nomVillage">
-    
-  </div>
-  
-  <button type="submit" class="btn btn-primary">Submit</button>
-</form>
-   .</div>
+	 
 	
 	</div>
 	</div>      

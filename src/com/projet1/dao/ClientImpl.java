@@ -31,7 +31,7 @@ public class ClientImpl implements IClient {
 					ResultSet rs = ps.executeQuery();
 					while(rs.next()) {
 						Client c = new Client();
-						c.setId(rs.getInt("id_client"));
+						c.setId(rs.getInt("id"));
 						c.setNom_client(rs.getString("nom_client"));
 						c.setAdresse_client(rs.getString("adresse_client"));
 						c.setTelephone_client(rs.getString("telephone_client"));
