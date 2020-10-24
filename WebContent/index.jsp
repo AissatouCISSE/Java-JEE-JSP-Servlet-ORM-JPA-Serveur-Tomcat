@@ -234,7 +234,29 @@
 		</table>
 		.</div>
 		
-	 <div class="col-sm-9 col-md-6">formulaire</div>
+	 <div class="col-sm-9 col-md-6">
+	 
+	 <form action="save.aissatou" method="post">
+  <div class="form-group">
+ 
+    <label>Adresse</label> <input class="form-control" type="text" name="adresse">
+    <label>Nom</label> <input class="form-control" type="text" name="nom">
+    <label>Telephone</label> <input class="form-control" type="text" name="telephone">
+   <label>Village</label> <select name="village"
+								class="form-control">
+								<option value="opt1">Choisir un village</option>
+								<c:forEach items="${villages}" var="village">
+									<option value="${village.id}">${village.nomVillage}</option>
+									<br>
+								</c:forEach>
+							</select>
+    
+  </div>
+  
+  <button type="submit" class="btn btn-primary">Submit</button>
+</form>
+	 
+	 </div>
 	
 	</div>
 	</div>

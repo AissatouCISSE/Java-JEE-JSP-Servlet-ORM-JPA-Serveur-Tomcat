@@ -14,6 +14,11 @@ import javax.persistence.*;
 
 public class Village implements Serializable {
 
+	@Override
+	public String toString() {
+		return "Village [id=" + id + ", nom_village=" + nom_village + ", user=" + user + ", clients=" + clients + "]";
+	}
+
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int id;

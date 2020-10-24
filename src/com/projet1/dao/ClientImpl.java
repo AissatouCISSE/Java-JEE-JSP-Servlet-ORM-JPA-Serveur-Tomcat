@@ -7,6 +7,10 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.persistence.EntityManager;
+import javax.persistence.EntityManagerFactory;
+import javax.persistence.Persistence;
+
 import com.projet1.entities.Client;
 import com.projet1.metier.SingletonConnection;
 
@@ -14,10 +18,24 @@ import com.projet1.metier.SingletonConnection;
 
 public class ClientImpl implements IClient {
 
+private EntityManager em;
+	
+    public ClientImpl() {
+    	EntityManagerFactory emf = Persistence.createEntityManagerFactory("Projet1_JEEPU");
+		em = emf.createEntityManager();
+	}
+
 	@Override
-	public Client save(Client c) {
-		// TODO Auto-generated method stub
-		return null;
+	public int add(Client client) {
+		try {
+			em.getTransaction().begin();
+			em.persist(client);
+			em.getTransaction().commit();
+			return 1;
+		}catch (Exception ex){
+			ex.printStackTrace();
+			return  0;
+		}
 	}
 
 	@Override
